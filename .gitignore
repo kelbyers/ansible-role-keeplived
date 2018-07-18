@@ -1,0 +1,22 @@
+
+# Created by https://www.gitignore.io/api/vagrant,ansible,visualstudiocode
+
+### Ansible ###
+*.retry
+
+### Vagrant ###
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.logs
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+
+# End of https://www.gitignore.io/api/vagrant,ansible,visualstudiocode
