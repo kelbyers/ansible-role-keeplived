@@ -8,10 +8,22 @@ Vagrant.configure("2") do |config|
     c.vm.network :private_network, :ip => '10.20.1.2'
   end
 
+  config.vm.define :c7b do |c|
+    c.vm.box = "puppetlabs/centos-7.2-64-nocm"
+    c.vm.hostname = "c7b.dev"
+    c.vm.network :private_network, :ip => '10.20.1.5'
+  end
+
   config.vm.define :c6 do |c|
     c.vm.box = "puppetlabs/centos-6.6-64-nocm"
     c.vm.hostname = "c6.dev"
     c.vm.network :private_network, :ip => '10.20.1.3'
+  end
+
+  config.vm.define :c6b do |c|
+    c.vm.box = "puppetlabs/centos-6.6-64-nocm"
+    c.vm.hostname = "c6b.dev"
+    c.vm.network :private_network, :ip => '10.20.1.6'
   end
 
   config.vm.define :cli do |c|
