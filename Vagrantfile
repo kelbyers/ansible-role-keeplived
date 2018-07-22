@@ -35,7 +35,13 @@ Vagrant.configure("2") do |config|
   config.vm.provision :hosts do |p|
     p.autoconfigure = true
     p.sync_hosts = true
-    p.add_host '10.20.1.254', ['gw.dev']
+    p.add_host '10.20.1.254', ['gw.dev', 'gw']
+  end
+
+  config.vm.define :dhcp do |c|
+    c.vm.hostname = "dhcp-cli"
+    c.vm.box = "puppetlabs/centos-7.2-64-nocm"
+    c.vm.network "public_network", auto_config: false
   end
 
 end
